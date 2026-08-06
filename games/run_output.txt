@@ -1,0 +1,59 @@
+Dynamic Entry/Exit Game: Equilibrium and Estimation
+======================================================================
+
+Q4-5: Equilibrium Computation
+  Init π       : V̄(3,0)=8.6810, μ̄(3,0)=8.6320
+  Init 0       : V̄(3,0)=8.6810, μ̄(3,0)=8.6320
+  Init 1       : V̄(3,0)=8.6810, μ̄(3,0)=8.6320
+  Init U[0,10] : V̄(3,0)=8.6810, μ̄(3,0)=8.6320
+  Init U[-5,15]: V̄(3,0)=8.6810, μ̄(3,0)=8.6320
+  Result: UNIQUE
+
+Q6: Equilibrium at (N,x)=(3,0)
+  μ̄(3,0) = 8.631981
+  γ̄(3,0) = 7.024259
+  V̄(3,0) = 8.681050
+  V(3,0,-2) = 8.631981 (firm stays)
+
+Q7: Market Simulation (10,000 periods)
+  Average firms: 3.4740
+
+Q8: Entry Tax Counterfactual
+  With 5-unit tax: 3.3625 firms
+  Change: -0.1115 firms (-3.21%)
+
+Q9: BBL-like Estimation (forward simulation of Λ, Λ^E)
+  Step 1: Nonparametric CCP estimation from simulated data
+    Simulating 10000 periods from equilibrium...
+    Estimated 15 incumbent CCPs and 15 entry CCPs from data
+    Sample CCP comparison (estimated vs true):
+      d(N=3,x=0): est=0.9497, true=0.9478
+      d(N=3,x=-5): est=0.5147, true=0.5157
+      d(N=3,x=5): est=0.9990, true=1.0000
+      e(N=3,x=0): est=0.8206, true=0.8173
+      e(N=3,x=-5): est=0.9990, true=0.9980
+      e(N=3,x=5): est=0.9290, true=0.9261
+  Step 2: Forward simulation (Λ, Λ^E) and minimum distance search
+  Using 50 simulations, horizon=1000
+    Start rng-1   : obj=0.051855, μ= 6.059, σ_μ=2.799, γ= 5.040, σ_γ=3.440, iters=26
+    Start rng-2   : obj=0.051855, μ= 6.059, σ_μ=2.799, γ= 5.040, σ_γ=3.440, iters=23
+    Start rng-3   : obj=0.051855, μ= 6.059, σ_μ=2.799, γ= 5.040, σ_γ=3.440, iters=30
+    Settings: n_sim=50, horizon=1000
+    Objective breakdown: total=0.051855, inc_sum=0.041749, ent_sum=0.010106
+  Using 1000 simulations, horizon=1000
+    Start rng-1   : obj=0.002690, μ= 4.928, σ_μ=2.359, γ= 5.055, σ_γ=2.185, iters=28
+    Start rng-2   : obj=0.002690, μ= 4.928, σ_μ=2.359, γ= 5.055, σ_γ=2.185, iters=26
+    Start rng-3   : obj=0.002690, μ= 4.928, σ_μ=2.359, γ= 5.054, σ_γ=2.186, iters=26
+    Settings: n_sim=1000, horizon=1000
+    Objective breakdown: total=0.002690, inc_sum=0.002342, ent_sum=0.000348
+  Bootstrap using mode 'hp' with res n_sim=1000
+Running 100 BBL bootstraps in parallel (n_jobs=-1)...
+  Completed 100 bootstrap replications
+  Bootstrap SE:         μ= 0.390, σ_μ=0.193, γ= 0.481, σ_γ=0.320
+  Original θ:           μ= 4.928, σ_μ=2.359, γ= 5.055, σ_γ=2.185
+  Bootstrap bias:       μ= 0.189, σ_μ=-0.048, γ= 0.003, σ_γ=0.129
+  Bias-corrected θ:     μ= 4.740, σ_μ=2.407, γ= 5.052, σ_γ=2.056
+  Percentile 95% CI:    μ=[ 4.360,  5.850], σ_μ=[1.973, 2.706], γ=[ 4.069,  5.947], σ_γ=[1.709, 3.018]
+  Bias-corrected 95% CI: μ=[ 4.007,  5.496], σ_μ=[2.012, 2.745], γ=[ 4.163,  6.041], σ_γ=[1.352, 2.662]
+
+======================================================================
