@@ -1,7 +1,7 @@
 # Empirical industrial organization
 
-Three implementations written for the PhD Empirical IO sequence at Yale
-(ECON 6600, Fall 2025, Profs. Philip Haile and Charles Hodgson).
+Three implementations written for Industrial Organization I at Yale
+([ECON 600](https://marek-chadim.github.io/coursework.html#econ600), Fall 2025, Profs. Philip Haile and Charles Hodgson).
 
 ## `demand/`: BLP demand estimation and merger simulation
 
@@ -14,8 +14,8 @@ counterfactuals, estimated with [pyBLP](https://github.com/jeffgortmaker/pyblp).
 
 ## `dynamics/`: single-agent dynamics (Rust 1987)
 
-Value-function iteration and structural estimation of the optimal machine-replacement model,
-on Rust's original bus-engine data.
+Value-function iteration and structural estimation of a Rust-style machine-replacement model
+on course data.
 
 - `dp.ipynb`: notebook; `HW1_Rust_data.asc`: data
 
